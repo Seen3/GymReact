@@ -5,6 +5,14 @@ export function Login() {
       let path = `/About`; 
       navigate(path);
     }
+    const routeChange2 = () =>{ 
+      let path = `/`;
+      let logintry=1;
+      if (logintry) 
+        navigate(path);
+      else
+        alert("Invalid Username/Password")
+    }
     
     return (
       <div>
@@ -14,7 +22,7 @@ export function Login() {
         <input type="text" placeholder="Enter Username" name="uname" required/>
         <label for="pass"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="pass" required/>
-        <button type="submit">Login</button>
+        <button type="submit" onClick={routeChange2}>Login</button>
         <label>
         <input type="checkbox" name="remember"/>Remember Me
         </label>

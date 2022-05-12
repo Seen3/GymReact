@@ -2,35 +2,54 @@
   color: #ccc;
   text-align: center;
 }
-body{
+
+body {
   background-image: url("../resources/risen-wang-20jX9b35r_M-unsplash.jpg");
   background-size: cover;
 }
-.loginform{
+
+.loginform {
   border: 3px solid #f1f1f1;
   width: 50%;
   margin: 0 auto;
 }
-button{
-background-color: #5f04aa;
-color: white; 
-padding: 14px 20px;
-margin: 8px 0;
-border: none;
-cursor: pointer;
-width: 60%;
-display: block;
-margin: 0 auto;
+
+.login {
+  display: flex;
+  flex-direction: column;
 }
+
+.dayBox {
+  display: grid;
+  grid-auto-flow: column;
+  background-color: rgba(0, 0, 0, 0.627);
+  
+}
+
+button {
+  background-color: #5f04aa;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+
 button:hover {
   opacity: 0.8;
 }
-.knowMore{
+
+.knowMore {
   background-color: rgb(148, 1, 1);
   width: 30%;
   margin-top: 3em;
 }
-input[type=text], input[type=password] {
+
+input[type=text],
+input[type=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -38,23 +57,30 @@ input[type=text], input[type=password] {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
-.workoutPage{
+
+.workoutPage {
   display: flex;
   justify-content: space-between;
   font-size: 2em;
 }
-input:focus{
+
+input:focus {
   outline: none;
   border: none;
 }
+
 @media screen and (max-width: 900px) {
-  .loginform{
+  .loginform {
     width: 100%;
   }
-  .knowMore{
+
+  .knowMore {
     width: 100%;
   }
-  body{
+
+  body {
     background-size: auto
-  };
+  }
+
+  ;
 }
