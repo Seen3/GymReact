@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://Seen:APqxtOl2m9eakm8T@gymdata.4cw5q.mongodb.net/LoginData.Uspw?retryWrites=true&w=majority', {
+let url=${{secret.MONGOCREDS}} //original creds are in local repo
+mongoose.connect(url, {
   dbName: 'Uspw',
   useNewUrlParser: true,
   useUnifiedTopology: true
