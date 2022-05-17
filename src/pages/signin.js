@@ -16,7 +16,7 @@ export function Signin(){
       }
       const handleOnSubmit = async (e) => {
         e.preventDefault();
-        if(pass!=confpass)
+        if(pass!==confpass)
         {
             alert("Passwords are not same");
             return;
@@ -29,7 +29,7 @@ export function Signin(){
                 'Content-Type':'application/json',
                 'Accept':'application/json'
             }
-        })
+        });
         result = await result.json();
         console.warn(result);
         if (result) {
@@ -38,6 +38,7 @@ export function Signin(){
             setName("");
             setConfPass("");
             setAge(0);
+            navigate('/login')
         }
     }
     return(
