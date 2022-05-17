@@ -13,22 +13,52 @@ let userPass=new Schema(
 )
 */
 
-const express = require("express");
+const mongoose=require('mongoose')
+mongoose.connect('mongodb+srv://Seen:APqxtOl2m9eakm8T@gymdata.4cw5q.mongodb.net/LoginData.Uspw?retryWrites=true&w=majority',{
+  dbName:'Uspw',
+  useNewUrlParser:true,
+  useUnifiedTopology:true
+},err=>err?console.log(err):console.log("Connected to database."));
+const RegisterSchema = new mongoose.Schema({
+  uname: {
+      type: String,
+      required: true,
+  },
+  pass: {
+      type: String,
+      required: true,
+  },
+  age:{
+    type:String,
+    required:true,
+  },
+});
+const User = mongoose.model('users', RegisterSchema);
+const express = require('express');
 const app = express();
 const cors = require("cors");
-require("dotenv").config({ path: "./config.env" });
-const port = process.env.PORT || 5000;
-app.use(cors());
+console.log("App listen at port 5000");
 app.use(express.json());
-app.use(require("./routes/record"));
-// get driver connection
-const dbo = require("./db/conn");
- 
-app.listen(port, () => {
-  // perform a database connection when server starts
-  dbo.connectToServer(function (err) {
-    if (err) console.error(err);
- 
-  });
-  console.log(`Server is running on port: ${port}`);
+app.use(cors());
+app.get("/", (req, resp) => {
+  resp.send("App is Working");
+  //http://loacalhost:5000
 });
+
+app.post("/register", async (req, resp) => {
+  try {
+      const user = new User(req.body);
+      let result = await user.save();
+      result = result.toObject();
+      if (result) {
+          delete result.uname;
+          resp.send(req.body);
+          console.log(result);
+      } else {
+          console.log("User already register");
+      }
+  } catch (e) {
+      resp.send("Something Went Wrong");
+  }
+});
+app.listen(5000);
