@@ -30,7 +30,7 @@ export function Signin(){
                 'Accept':'application/json'
             }
         });
-        result = await result.json();
+        
         console.warn(result);
         if (result) {
             alert("Data saved succesfully");
