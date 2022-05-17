@@ -20,6 +20,11 @@ export function About() {
           color:'crimson',
           textDecoration:'none',
         }}>Login</Link>
+        <br/>
+        <Link to="/signin"  style={{
+          color:'crimson',
+          textDecoration:'none',
+        }}>Register</Link>
         </nav>
       </div>
     );

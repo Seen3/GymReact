@@ -6,6 +6,10 @@ export function Login() {
       let path = `/About`; 
       navigate(path);
     }
+    const routeChange3 = () =>{ 
+      let path = `/signin`; 
+      navigate(path);
+    }
     const routeChange2 = () =>{ 
       let path = `/`;
       let logintry=1;
@@ -24,6 +28,10 @@ export function Login() {
         <label for="pass"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="pass" required/>
         <button type="submit" onClick={routeChange2}>Login</button>
+        <br />
+        <button onClick={routeChange3}>
+          REGISTER
+        </button>
         <label>
         <input type="checkbox" name="remember"/>Remember Me
         </label>
